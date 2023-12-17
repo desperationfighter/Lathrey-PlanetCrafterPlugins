@@ -7,7 +7,6 @@ using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
 using SpaceCraft;
-using MijuTools;
 using UnityEngine;
 using Newtonsoft.Json.Linq;
 using System.Linq;
@@ -101,21 +100,27 @@ namespace RecipeExportImport_Plugin
             groupDataItemDelegates["usableType"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataItem).usableType = newValue.ToObject<DataConfig.UsableType>(); };
             groupDataItemDelegates["itemCategory"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataItem).itemCategory = newValue.ToObject<DataConfig.ItemCategory>(); };
             groupDataItemDelegates["growableGroup"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataItem).growableGroup = Framework.GroupDataById[newValue.ToObject<string>()] as GroupDataItem; };
-            groupDataItemDelegates["associatedGroups"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataItem).associatedGroups = Framework.GroupDataListById(newValue.ToObject<List<string>>()); };
-            groupDataItemDelegates["assignRandomGroupAtSpawn"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataItem).assignRandomGroupAtSpawn = newValue.ToObject<bool>(); };
-            groupDataItemDelegates["replaceByRandomGroupAtSpawn"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataItem).replaceByRandomGroupAtSpawn = newValue.ToObject<bool>(); };
+            //groupDataItemDelegates["associatedGroups"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataItem).associatedGroups = Framework.GroupDataListById(newValue.ToObject<List<string>>()); }; ???
+            //groupDataItemDelegates["assignRandomGroupAtSpawn"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataItem).assignRandomGroupAtSpawn = newValue.ToObject<bool>(); }; ???
+            //groupDataItemDelegates["replaceByRandomGroupAtSpawn"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataItem).replaceByRandomGroupAtSpawn = newValue.ToObject<bool>(); }; ???
             groupDataItemDelegates["unitMultiplierOxygen"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataItem).unitMultiplierOxygen = newValue.ToObject<float>(); };
             groupDataItemDelegates["unitMultiplierPressure"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataItem).unitMultiplierPressure = newValue.ToObject<float>(); };
             groupDataItemDelegates["unitMultiplierHeat"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataItem).unitMultiplierHeat = newValue.ToObject<float>(); };
             groupDataItemDelegates["unitMultiplierEnergy"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataItem).unitMultiplierEnergy = newValue.ToObject<float>(); };
-            groupDataItemDelegates["unitMultiplierBiomass"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataItem).unitMultiplierBiomass = newValue.ToObject<float>(); };
+            //groupDataItemDelegates["unitMultiplierBiomass"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataItem).unitMultiplierBiomass = newValue.ToObject<float>(); };
+            groupDataItemDelegates["unitMultiplierAnimals"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataItem).unitMultiplierAnimals = newValue.ToObject<float>(); };
+            groupDataItemDelegates["unitMultiplierInsects"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataItem).unitMultiplierInsects = newValue.ToObject<float>(); };
+            groupDataItemDelegates["unitMultiplierPlants"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataItem).unitMultiplierPlants = newValue.ToObject<float>(); };
 
             // GroupDataConstructible specific
             groupDataConstructibleDelegates["unitGenerationOxygen"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataConstructible).unitGenerationOxygen = newValue.ToObject<float>(); };
             groupDataConstructibleDelegates["unitGenerationPressure"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataConstructible).unitGenerationPressure = newValue.ToObject<float>(); };
             groupDataConstructibleDelegates["unitGenerationHeat"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataConstructible).unitGenerationHeat = newValue.ToObject<float>(); };
             groupDataConstructibleDelegates["unitGenerationEnergy"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataConstructible).unitGenerationEnergy = newValue.ToObject<float>(); };
-            groupDataConstructibleDelegates["unitGenerationBiomass"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataConstructible).unitGenerationBiomass = newValue.ToObject<float>(); };
+            //groupDataConstructibleDelegates["unitGenerationBiomass"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataConstructible).unitGenerationBiomass = newValue.ToObject<float>(); };
+            groupDataConstructibleDelegates["unitGenerationAnimals"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataConstructible).unitGenerationAnimals = newValue.ToObject<float>(); };
+            groupDataConstructibleDelegates["unitGenerationInsects"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataConstructible).unitGenerationInsects = newValue.ToObject<float>(); };
+            groupDataConstructibleDelegates["unitGenerationPlants"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataConstructible).unitGenerationPlants = newValue.ToObject<float>(); };
             groupDataConstructibleDelegates["rotationFixed"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataConstructible).rotationFixed = newValue.ToObject<bool>(); };
             groupDataConstructibleDelegates["groupCategory"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataConstructible).groupCategory = newValue.ToObject<DataConfig.GroupCategory>(); };
             groupDataConstructibleDelegates["worlUnitMultiplied"] = (groupToEdit, valueToEidt, newValue) => { (groupToEdit as GroupDataConstructible).worlUnitMultiplied = newValue.ToObject<DataConfig.WorldUnitType>(); };

@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net46</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <Product>RecipeExportImport</Product>
-    <Version>2.2.0</Version>
+    <Version>2.3.0</Version>
     <AssemblyName>Lathrey-$(Product)</AssemblyName>
     <Description>A plugin to export a list of recipes in the game and import changes/additions.</Description>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -28,9 +28,6 @@
     </Reference>
     <Reference Include="UnityUI">
       <HintPath>$(GameLibrariesFolder)UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="MijuTools">
-      <HintPath>$(GameLibrariesFolder)com.mijugames.miju-tools.dll</HintPath>
     </Reference>
   </ItemGroup>
 

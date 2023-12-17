@@ -1,11 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net46</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <Product>PluginFramework</Product>
     <AssemblyName>Lathrey-$(Product)</AssemblyName>
     <Description>Add reusable framework facilities to be used by other plugins.</Description>
-    <Version>2.1.0</Version>
+    <Version>2.2.0</Version>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
     <PlanetCrafterFolder>C:\Program Files (x86)\Steam\steamapps\common\The Planet Crafter</PlanetCrafterFolder>
@@ -27,9 +27,6 @@
     </Reference>
     <Reference Include="UnityUI">
       <HintPath>$(GameLibrariesFolder)UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="MijuTools">
-      <HintPath>$(GameLibrariesFolder)com.mijugames.miju-tools.dll</HintPath>
     </Reference>
   </ItemGroup>
 

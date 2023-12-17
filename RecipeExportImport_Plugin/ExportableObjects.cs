@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using SpaceCraft;
-using UnityEngine;
 
 [Serializable]
 class ExportableGroupData
@@ -50,7 +49,10 @@ class ExportableGroupDataItem : ExportableGroupData
     public float unitMultiplierPressure;
     public float unitMultiplierHeat;
     public float unitMultiplierEnergy;
-    public float unitMultiplierBiomass;
+    //public float unitMultiplierBiomass;
+    public float unitMultiplierAnimals;
+    public float unitMultiplierInsects;
+    public float unitMultiplierPlants;
 
     public ExportableGroupDataItem(GroupDataItem item) : base(item)
     {
@@ -60,18 +62,21 @@ class ExportableGroupDataItem : ExportableGroupData
         usableType = item.usableType;
         itemCategory = item.itemCategory;
         growableGroup = item.growableGroup ? item.growableGroup.id : "None";
-        associatedGroups = new List<string>(item.associatedGroups.Count);
-        foreach (GroupData data in item.associatedGroups)
-        {
-            associatedGroups.Add(data.id);
-        }
-        assignRandomGroupAtSpawn = item.assignRandomGroupAtSpawn;
-        replaceByRandomGroupAtSpawn = item.replaceByRandomGroupAtSpawn;
+        //associatedGroups = new List<string>(item.associatedGroups.Count); ???
+        //foreach (GroupData data in item.associatedGroups)
+        //{
+        //  associatedGroups.Add(data.id);
+        //}
+        //assignRandomGroupAtSpawn = item.assignRandomGroupAtSpawn; ???
+        //replaceByRandomGroupAtSpawn = item.replaceByRandomGroupAtSpawn; ???
         unitMultiplierOxygen = item.unitMultiplierOxygen;
         unitMultiplierPressure = item.unitMultiplierPressure;
         unitMultiplierHeat = item.unitMultiplierHeat;
         unitMultiplierEnergy = item.unitMultiplierEnergy;
-        unitMultiplierBiomass = item.unitMultiplierBiomass;
+        //unitMultiplierBiomass = item.unitMultiplierBiomass;
+        unitMultiplierAnimals = item.unitMultiplierAnimals;
+        unitMultiplierInsects = item.unitMultiplierInsects;
+        unitMultiplierPlants = item.unitMultiplierPlants;
     }
 }
 
@@ -82,7 +87,10 @@ class ExportableGroupDataConstructible : ExportableGroupData
     public float unitGenerationPressure;
     public float unitGenerationHeat;
     public float unitGenerationEnergy;
-    public float unitGenerationBiomass;
+    //public float unitGenerationBiomass;
+    public float unitGenerationAnimals;
+    public float unitGenerationInsects;
+    public float unitGenerationPlants;
     public bool rotationFixed;
     public DataConfig.GroupCategory groupCategory;
     public DataConfig.WorldUnitType worlUnitMultiplied;
@@ -93,7 +101,10 @@ class ExportableGroupDataConstructible : ExportableGroupData
         unitGenerationPressure = constructible.unitGenerationPressure;
         unitGenerationHeat = constructible.unitGenerationHeat;
         unitGenerationEnergy = constructible.unitGenerationEnergy;
-        unitGenerationBiomass = constructible.unitGenerationBiomass;
+        //unitGenerationBiomass = constructible.unitGenerationBiomass;
+        unitGenerationAnimals = constructible.unitGenerationAnimals;
+        unitGenerationInsects = constructible.unitGenerationInsects;
+        unitGenerationPlants = constructible.unitGenerationPlants;
         rotationFixed = constructible.rotationFixed;
         groupCategory = constructible.groupCategory;
         worlUnitMultiplied = constructible.worlUnitMultiplied;

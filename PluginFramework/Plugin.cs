@@ -4,7 +4,6 @@ using System.IO;
 using BepInEx;
 using BepInEx.Logging;
 using HarmonyLib;
-using MijuTools;
 using SpaceCraft;
 using UnityEngine;
 
@@ -115,7 +114,7 @@ namespace PluginFramework
             newItem.id = id;
             newItem.recipeIngredients = new List<GroupDataItem>();
             newItem.craftableInList = new List<DataConfig.CraftableIn>();
-            newItem.associatedGroups = new List<GroupData>();
+            //newItem.associatedGroups = new List<GroupData>();
             return newItem;
         }
 
@@ -294,13 +293,10 @@ namespace PluginFramework
 
         private static void LoadTerraformStages()
         {
-            if (Managers.GetManager<TerraformStagesHandler>())
+            TerraformStagesHandler terraformStagesHandler = new TerraformStagesHandler();
+            foreach (TerraformStage stage in terraformStagesHandler.GetAllTerraGlobalStages())
             {
-                List<TerraformStage> terraformStages = Managers.GetManager<TerraformStagesHandler>().GetAllTerraGlobalStages();
-                foreach (TerraformStage stage in terraformStages)
-                {
                     terraformStageById[stage.GetTerraId()] = stage;
-                }
             }
         }
 
