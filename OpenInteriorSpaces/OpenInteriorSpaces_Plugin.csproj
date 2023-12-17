@@ -1,9 +1,9 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net46</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <Product>OpenInteriorSpaces</Product>
-    <Version>2.4.0</Version>
+    <Version>2.4.1</Version>
     <AssemblyName>Lathrey-$(Product)</AssemblyName>
     <Description>A plugin to remove interior pillars when building connected pods.</Description>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -27,9 +27,6 @@
     </Reference>
     <Reference Include="UnityUI">
       <HintPath>$(GameLibrariesFolder)UnityEngine.UI.dll</HintPath>
-    </Reference>
-      <Reference Include="MijuTools">
-      <HintPath>$(GameLibrariesFolder)com.mijugames.miju-tools.dll</HintPath>
     </Reference>
 </ItemGroup>
 

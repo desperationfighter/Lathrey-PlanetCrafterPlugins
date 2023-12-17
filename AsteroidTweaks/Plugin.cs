@@ -3,7 +3,6 @@ using System.Reflection;
 using BepInEx;
 using BepInEx.Configuration;
 using HarmonyLib;
-using MijuTools;
 using SpaceCraft;
 using UnityEngine.InputSystem;
 
@@ -71,6 +70,7 @@ namespace AsteroidTweaks_Plugin
             meteoHandlerInstance = __instance;
             launchRandomMeteoEventMethod = HarmonyLib.AccessTools.Method(typeof(MeteoHandler), "LaunchRandomMeteoEvent");
             queueMeteoEventMethod = HarmonyLib.AccessTools.Method(typeof(MeteoHandler), "QueueMeteoEvent");
+            //asteroidEvents = __instance.meteoEvents.FindAll((MeteoEventData mEvent) => mEvent.asteroidEventData != null);
             asteroidEvents = __instance.meteoEvents.FindAll((MeteoEventData mEvent) => mEvent.asteroidEventData != null);
             worldUnitsHandler = Managers.GetManager<WorldUnitsHandler>();
         } 

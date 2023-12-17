@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net46</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <Product>FixBeacon</Product>
-    <Version>2.5.0</Version>
+    <Version>2.5.1</Version>
     <AssemblyName>Lathrey-$(Product)</AssemblyName>
     <Description>A plugin to attempt to fix beacon alignment</Description>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>

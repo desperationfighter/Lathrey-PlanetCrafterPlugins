@@ -4,8 +4,6 @@ using HarmonyLib;
 using SpaceCraft;
 using UnityEngine.InputSystem;
 using UnityEngine;
-using MijuTools;
-using TMPro;
 
 namespace AutoMove_Plugin
 {
